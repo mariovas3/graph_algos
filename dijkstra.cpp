@@ -25,14 +25,14 @@ vector<int> dijkstra(int start, vector<vector<vector<int>>> edges) {
 				}
 			}
 		}
-        //finding the next min cost to explore
+		//finding the next min cost to explore
 		for(i=0;i<n;i++)if(taken[i]==false&&diff>costs[i]){min=i;diff=costs[i];}
         
-        //if no avilable min edges found return the vector of costs;
+		//if no avilable min edges found return the vector of costs;
 		if(min==INT32_MAX){
 
 			//optional loop if you want to have -1 instead of INF to appear for unreachable nodes
-            for(int &x:costs)if(x==INT32_MAX)x=-1;
+			for(int &x:costs)if(x==INT32_MAX)x=-1;
 			return costs;
 		}
 		taken[min]=true;
@@ -42,7 +42,7 @@ vector<int> dijkstra(int start, vector<vector<vector<int>>> edges) {
 		count--;
 	}
 
-    //optional loop if you want to have -1 instead of INF to appear for unreachable nodes
+	//optional loop if you want to have -1 instead of INF to appear for unreachable nodes
 	for(int &x:costs)if(x==INT32_MAX)x=-1;
 	return costs;
 }
