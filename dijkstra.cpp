@@ -1,14 +1,12 @@
-#include <vector>
-#include<iostream>
-using namespace std;
+#include<bits/stdc++.h>
 
 //implementation with array so O(V^2+E) time O(V) space, V is #nodes, E is #edges
 //each edge has {vertex,cost}, graph is stored in an adjecency list, so each index is a starting vertex
 
-vector<int> dijkstra(int start, vector<vector<vector<int>>> edges) {
+std::vector<int> dijkstra(int start, std::vector<std::vector<std::vector<int>>> edges) {
  	int n=edges.size();
-	vector<bool>taken(n,false);//check if node is already explored
-	vector<int>costs(n,INT32_MAX);//a vector containing the costs
+	std::vector<bool>taken(n,false);//check if node is already explored
+	std::vector<int>costs(n,INT32_MAX);//a vector containing the costs
 	
 	costs[start]=0;
 	taken[start]=true;
